@@ -1,11 +1,6 @@
 import math
 
 
-a = float(input("Введіть значення 'a':"))
-b = float(input("Введіть значення 'b':"))
-c = float(input("Введіть значення 'c':"))
-
-
 #Квадратне рівняння
 
 def s (a, b, c):
@@ -20,6 +15,10 @@ def s (a, b, c):
     else:
         return "Немає дійсних коренів"
 
+a = float(input("Введіть значення 'a':"))
+b = float(input("Введіть значення 'b':"))
+c = float(input("Введіть значення 'c':"))
+
 rt = s(a, b, c)
 print(rt)
 
@@ -27,15 +26,15 @@ print(rt)
 #Біквадратне рівняння
 
 def sb(a, b, c):
-    quadratic_roots = s(a, b, c)
-    if isinstance(quadratic_roots, str):
-        return quadratic_roots
-    biquadratic_roots = []
-    for y in quadratic_roots:
+    qr = s(a, b, c)
+    if isinstance(qr, str):
+        return qr
+    biqr = []
+    for y in qr:
         if y >= 0:
-            biquadratic_roots.append(math.sqrt(y))
-            biquadratic_roots.append(-math.sqrt(y))
-    return biquadratic_roots if biquadratic_roots else "Немає дійсних коренів"
+            biqr.append(math.sqrt(y))
+            biqr.append(-math.sqrt(y))
+    return biqr if biqr else "Немає дійсних коренів"
 
 rtb = sb(a, b, c)
 print(rtb)
